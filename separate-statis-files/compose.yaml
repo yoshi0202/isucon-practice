@@ -1,0 +1,12 @@
+services:
+  mysql:
+    image: mysql:8
+    environment:
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_DATABASE=isucon
+    - MYSQL_USER=isucon
+    - MYSQL_PASSWORD=isucon
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db:/var/lib/mysql

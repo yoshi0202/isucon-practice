@@ -1,11 +1,6 @@
 services:
   app:
     build: .
-    environment:
-    - MYSQL_ROOT_PASSWORD=password
-    - MYSQL_DATABASE=isucon
-    - MYSQL_USER=isucon
-    - MYSQL_PASSWORD=isucon
     ports:
       - 3000:3000
       - 80:80

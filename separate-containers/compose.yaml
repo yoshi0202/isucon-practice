@@ -1,4 +1,20 @@
 services:
+  app:
+    build: .
+    ports:
+      - 3000:3000
+    depends_on:
+      mysql:
+        condition: service_healthy
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./public:/usr/share/nginx/html/public
+    depends_on:
+      - app
   mysql:
     image: mysql:8
     environment:
@@ -6,6 +22,10 @@ services:
     - MYSQL_DATABASE=isucon
     - MYSQL_USER=isucon
     - MYSQL_PASSWORD=isucon
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 1s
+      retries: 100
     ports:
       - 3306:3306
     volumes:

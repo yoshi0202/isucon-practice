@@ -1,4 +1,6 @@
-DROP TABLE IF EXISTS photos;
+CREATE DATABASE isucon;
+
+use isucon;
 
 CREATE TABLE photos (
   id INT PRIMARY KEY,

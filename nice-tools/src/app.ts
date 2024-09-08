@@ -9,9 +9,9 @@ const app = express();
 const PORT = process.env.PORT;
 
 const access: ConnectionOptions = {
-  host: 'mysql',
-  user: 'isucon',
-  password: 'isucon',
+  host: '127.0.0.1',
+  user: 'root',
+  password: '',
   database: 'isucon',
 };
 

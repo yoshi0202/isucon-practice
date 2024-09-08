@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    ports:
+      - 3000:3000
+      - 80:80
+    volumes:
+      - ./50-server.conf:/etc/mysql/mariadb.conf.d/50-server.cnf
+      - ./nginx/default.conf:/etc/nginx/sites-available/default

@@ -1,7 +1,9 @@
+DROP DATABASE IF EXISTS isucon;
 CREATE DATABASE isucon;
 
 use isucon;
 
+DROP TABLE IF EXISTS photos;
 CREATE TABLE photos (
   id INT PRIMARY KEY,
   name VARCHAR(255),

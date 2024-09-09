@@ -1,3 +1,9 @@
+DROP DATABASE IF EXISTS isucon;
+
+CREATE DATABASE isucon;
+
+use isucon;
+
 DROP TABLE IF EXISTS photos;
 
 CREATE TABLE photos (
@@ -5,6 +11,8 @@ CREATE TABLE photos (
   name VARCHAR(255),
   url VARCHAR(255)
 );
+
+select * from photos where name = 'Photo 1';
 
 INSERT INTO
   photos (id, name, url)
